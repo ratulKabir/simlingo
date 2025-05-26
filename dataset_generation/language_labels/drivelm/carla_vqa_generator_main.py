@@ -158,16 +158,15 @@ def convert_carla_to_nuscenes_and_save(args, carla_file_content):
 
 if __name__ == '__main__':
     args = parse_arguments()
-    multi_processing = False
+    multi_processing = False  # Enable multi-processing for faster generation
 
     qas_generator = QAsGenerator(args)
     len_data_boxes = len(qas_generator.data_boxes_paths)
 
     if multi_processing:
         from tqdm.contrib.concurrent import process_map
-        r = process_map(qas_generator.create_qa_pairs, range(0,len_data_boxes), max_workers=64, chunksize=10000)
+        r = process_map(qas_generator.create_qa_pairs, range(0,len_data_boxes), max_workers=16, chunksize=1000)  # Using 16 cores out of 24
     else:
-
         for i in range(len_data_boxes):
             qas_generator.create_qa_pairs(i)
 

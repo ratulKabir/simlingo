@@ -75,13 +75,13 @@ def parse_arguments():
 
 if __name__ == '__main__':
     args = parse_arguments()
-    multi_processing = True
+    multi_processing = False
 
     com_generator = COMsGenerator(args)
     len_data_boxes = len(com_generator.data_boxes_paths)
     if multi_processing:
         from tqdm.contrib.concurrent import process_map
-        r = process_map(com_generator.create_commentary, range(0, len_data_boxes), max_workers=64, chunksize=10000)
+        r = process_map(com_generator.create_commentary, range(0, len_data_boxes), max_workers=20, chunksize=1000)
     else:
         for i in tqdm(range(len_data_boxes)):
             com_generator.create_commentary(i)

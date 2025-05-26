@@ -444,7 +444,7 @@ class DataModule(LightningDataModule):
 
         super().__init__()
         self.batch_size = 64
-        self.num_workers = 64
+        self.num_workers = 20
         self.data_path = data_path
         self.hist_len = 3
         self.pred_len = 11
