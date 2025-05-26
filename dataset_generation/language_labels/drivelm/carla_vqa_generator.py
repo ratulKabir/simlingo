@@ -63,7 +63,7 @@ class QAsGenerator():
         Path(self.output_directory).mkdir(parents=True, exist_ok=True)
 
         # all the paths to the boxes in the data
-        self.data_boxes_paths_all = glob.glob(os.path.join(self.data_directory, 'data/simlingo/*/*/*/*/boxes/*.json.gz'))[:30]
+        self.data_boxes_paths_all = glob.glob(os.path.join(self.data_directory, 'data/simlingo/*/*/*/*/boxes/*.json.gz')) #[:30]
         print(f"Number of boxes paths: {len(self.data_boxes_paths_all)}")
 
         self.data_boxes_paths = self.data_boxes_paths_all
