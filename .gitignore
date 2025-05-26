@@ -6,6 +6,7 @@ outputs/
 eval/
 eval_results/
 pretrained/
+data/simlingo/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
