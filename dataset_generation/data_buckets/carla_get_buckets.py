@@ -498,12 +498,12 @@ class DataModule(LightningDataModule):
 
 def main():
 
-    data_path = 'database/simlingo_v2_2025_01_10'
-    save_path = f'database/bucketsv2_simlingo_v2_2025_01_10'
+    data_path = 'database/simlingo_v2_2025_05_24'
+    save_path = f'database/bucketsv2_simlingo_v2_2025_05_24'
 
     Path(save_path).mkdir(parents=True, exist_ok=True)
 
-    init_from_folder = None #'database/buckets_simlingo_v2_2025_01_10' #'database/buckets_expertv3_3' #'database/buckets_expertv3_2_woallweather'
+    init_from_folder = None #'database/buckets_simlingo_v2_2025_05_24' #'database/buckets_expertv3_3' #'database/buckets_expertv3_2_woallweather'
     all_routes = None
 
     if init_from_folder is not None:

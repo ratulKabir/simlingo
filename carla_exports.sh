@@ -1,5 +1,5 @@
-export CARLA_ROOT=/path/to/CARLA/root
-export WORK_DIR=/path/to/simlingo
+export CARLA_ROOT=/home/ratul/software/carla0915
+export WORK_DIR=/home/ratul/Workstation/ratul/simlingo
 export PYTHONPATH=$PYTHONPATH:${WORK_DIR}
 export PYTHONPATH=$PYTHONPATH:${CARLA_ROOT}/PythonAPI
 export PYTHONPATH=$PYTHONPATH:${CARLA_ROOT}/PythonAPI/carla

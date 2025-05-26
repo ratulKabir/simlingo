@@ -55,8 +55,8 @@ class DrivingModelConfig:
 class DrivingDataModuleConfig:
     batch_size: int = 16
     num_workers: int = 10
-    data_path: str = "database/simlingo_v2_2025_01_10"
-    bucket_path: str = "database/bucketsv2_simlingo_v2_2025_01_10"
+    data_path: str = "database/simlingo_v2_2025_05_24"
+    bucket_path: str = "database/bucketsv2_simlingo_v2_2025_05_24"
     encoder: str = "llavanext" # "resnet"
     train_partitions: Optional[Dict[str, float]] = None
     cut_bottom_quarter: bool = False

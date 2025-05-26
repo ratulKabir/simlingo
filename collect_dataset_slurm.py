@@ -215,8 +215,8 @@ if __name__ == "__main__":
     default_partition = "YOUR_PARTITION" 
     job_name = "collect"
     username = "YOUR_USER"
-    code_root = r"/path/to/simlingo"
-    carla_root = "/path/to/CARLA/root"
+    code_root = r"/home/ratul/Workstation/ratul/simlingo"
+    carla_root = "/home/ratul/software/carla0915"
     date = datetime.today().strftime("%Y_%m_%d")
     dataset_name = "simlingo_v2_" + date
     root_folder = r"database/"  # With ending slash
