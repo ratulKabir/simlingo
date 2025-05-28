@@ -1,6 +1,8 @@
 # SimLingo: Vision-Only Closed-Loop Autonomous Driving with Language-Action Alignment
 
-This repository contains tools for collecting and processing autonomous driving data using the CARLA simulator on the local machine or AWS (no SLURM), including sensor data collection and language data generation. _Note that this repo is intended for the undertsanding of the workflow of SimLingo VLA, not to have a full on training pipeline. It can be too much to run this type of models on a single GPU machine with limited memory._ 
+This repository is a fork of the original [SimLingo repository](https://github.com/RenzKa/simlingo) by Katrin Renz et al., modified to run data collection and processing locally without SLURM dependencies. The main purpose of this fork is to provide a simplified workflow for understanding Vision-Language-Action (VLA) alignment in autonomous driving using the CARLA simulator.
+
+_Note: This repository focuses on the data collection and processing pipeline of SimLingo VLA. It does not include the full training/inference pipeline, as training large-scale autonomous driving models typically requires significant computational resources beyond a single GPU setup. For the complete training pipeline and model implementation, please refer to the [original repository](https://github.com/RenzKa/simlingo)._
 
 ## Prerequisites
 
@@ -127,6 +129,39 @@ This will display a comprehensive view of a sample data point including:
 - Visual Question-Answering (VQA) pairs
 
 ![Example Data Visualization](assets/single_example.png)
+
+## Citations
+
+SimLingo:
+```BibTeX
+@InProceedings{Renz2025cvpr,
+  title={SimLingo: Vision-Only Closed-Loop Autonomous Driving with Language-Action Alignment},
+  author={Renz, Katrin and Chen, Long and Arani, Elahe and Sinavski, Oleg},
+  booktitle={Conference on Computer Vision and Pattern Recognition (CVPR)},
+  year={2025}
+}
+```
+
+PDM-Lite expert:
+```BibTeX
+@inproceedings{Sima2024ECCV,
+  title={DriveLM: Driving with Graph Visual Question Answering},
+  author={Chonghao Sima and Katrin Renz and Kashyap Chitta and Li Chen and Hanxue Zhang and Chengen Xie and Jens Beißwenger and Ping Luo and Andreas Geiger and Hongyang Li},
+  booktitle={Proc. of the European Conf. on Computer Vision (ECCV)},
+  year={2024}
+}
+```
+
+Bench2Drive benchmark:
+
+```BibTeX
+@inproceedings{Jia2024NeurIPS,
+  title={Bench2Drive: Towards Multi-Ability Benchmarking of Closed-Loop End-To-End Autonomous Driving},
+  author={Xiaosong Jia and Zhenjie Yang and Qifeng Li and Zhiyuan Zhang and Junchi Yan},
+  booktitle={NeurIPS 2024 Datasets and Benchmarks Track},
+  year={2024}
+}
+```
 
 ## License
 
