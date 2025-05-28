@@ -112,6 +112,22 @@ To generate data buckets:
 python dataset_generation/bucket_generation/generate_buckets.py
 ```
 
+### 5. Data Visualization
+
+To visualize a single data point with all its associated information (RGB image, measurements, commentary, and VQA data), use the provided visualization script:
+
+```bash
+python simple_data_viewer.py
+```
+
+This will display a comprehensive view of a sample data point including:
+- RGB camera image
+- Vehicle measurements (speed, steering, etc.)
+- Generated commentary
+- Visual Question-Answering (VQA) pairs
+
+![Example Data Visualization](assets/single_example.png)
+
 ## License
 
 This project is licensed under the [MIT License](LICENSE). 
