@@ -18,12 +18,12 @@ model:
     variant: 'OpenGVLab/InternVL2-1B'
 
 data_module:
-  batch_size: 6 #12
+  batch_size: 2 #12
   num_workers: 8
   # dreamer_dataset: null
   base_dataset:
-    data_path: database/simlingo_v2_2025_01_10
-    bucket_path: database/bucketsv2_simlingo_v2_2025_01_10
+    data_path: /database/simlingo_1_data
+    bucket_path: /database/bucketsv2_simlingo_1_data
     pred_len: 11
     cut_bottom_quarter: True
     use_commentary: True
@@ -43,7 +43,7 @@ max_epochs: 15
 val_every_n_epochs: 2
 
 # debug: true
-gpus: 8
+gpus: 1
 seed: 9876
 name: simlingo_seed_9876
 resume: False

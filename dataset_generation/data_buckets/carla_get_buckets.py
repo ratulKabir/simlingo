@@ -498,8 +498,8 @@ class DataModule(LightningDataModule):
 
 def main():
 
-    data_path = 'database/simlingo_v2_2025_05_24'
-    save_path = f'database/bucketsv2_simlingo_v2_2025_05_24'
+    data_path = '/database/simlingo_1_data'
+    save_path = f'/database/bucketsv2_simlingo_1_data'
 
     Path(save_path).mkdir(parents=True, exist_ok=True)
 

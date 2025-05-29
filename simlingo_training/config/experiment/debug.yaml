@@ -18,12 +18,12 @@ model:
     variant: 'OpenGVLab/InternVL2-1B'
 
 data_module:
-  batch_size: 2
+  batch_size: 1
   num_workers: 0
   # dreamer_dataset: null
   base_dataset:
-    data_path: database/simlingo_v2_2025_05_24
-    bucket_path: database/bucketsv2_simlingo_v2_2025_05_24
+    data_path: /database/simlingo_1_data
+    bucket_path: /database/bucketsv2_simlingo_1_data
     pred_len: 11
     cut_bottom_quarter: True
     use_commentary: True
