@@ -132,6 +132,21 @@ This will display a comprehensive view of a sample data point including:
 
 ![Example Data Visualization](assets/single_example.png)
 
+### 6. Data Generation Explanation
+
+The authors generate question-answer pairs and commentary directly from simulation ground truth. The driving simulator provides full access to ego vehicle state, nearby agents, traffic lights, and map elements. Using these signals, rule-based templates automatically convert the scene into natural language. 
+
+Directly generating the language instructions using a VLM fails. Ensuring the accuracy of the generated data becomes an issue. Check the commentary generation example below. It was generated without any ground truth measurements. The commentary says that the road on the right is clear, but we can see that on the right is the sidewalk. 
+
+![Example Data Visualization](assets/commentary.png)
+
+For question-answer pairs (see Figure below), specific world states are mapped to questions such as`Is there a vehicle crossing?`, with answers like `Yes, a vehicle is crossing from left to right`, based on the position and motion of surrounding agents.
+
+![Example Data Visualization](assets/vqa.png)
+
+For commentary generation, multiple ground truth elements are combined into richer scene descriptions. This allows the creation of detailed, aligned video-language datasets at scale without manual labeling.
+
+
 ## Citations
 
 SimLingo:
