@@ -140,9 +140,13 @@ Directly generating the language instructions using a VLM fails. Ensuring the ac
 
 ![Example Data Visualization](assets/commentary.png)
 
-For question-answer pairs (see Figure below), specific world states are mapped to questions such as`Is there a vehicle crossing?`, with answers like `Yes, a vehicle is crossing from left to right`, based on the position and motion of surrounding agents.
+For question-answer pairs (see Figure below), specific world states are mapped to questions such as `What are the important objects in the scene?`, with answers like `The important object in the scene is the red car.`, based on the position and motion of surrounding agents. The wrongly generated QA without the ground truth was `Is there a vehicle crossing?` and `Yes, a vehicle is crossing from left to right`, which can be seen in the middle captions below.
 
 ![Example Data Visualization](assets/vqa.png)
+
+The data generation pipeline is shown below:
+
+![Example Data Visualization](assets/data_gen_pipeline.png)
 
 For commentary generation, multiple ground truth elements are combined into richer scene descriptions. This allows the creation of detailed, aligned video-language datasets at scale without manual labeling.
 
