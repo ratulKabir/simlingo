@@ -2,6 +2,7 @@
 
 from torch import nn
 from simlingo_training.models.encoder.internvl2_model import LingoInternVLModel
+from simlingo_training.models.encoder.smolvlm_model import LingoSmolVLMModel
 
 class VLMEncoderModel(nn.Module):
     def __init__(self,
@@ -21,6 +22,8 @@ class VLMEncoderModel(nn.Module):
 
         if 'internvl2' in self.variant.lower():
             self.image_encoder = LingoInternVLModel(self.variant, *cfg)
+        elif 'smolvlm' in self.variant.lower():
+            self.image_encoder = LingoSmolVLMModel(self.variant, *cfg)
         else:
             raise ValueError(f"Unknown variant {self.variant}")
         

@@ -184,6 +184,20 @@ Bench2Drive benchmark:
 }
 ```
 
+SmolVLM2
+
+```BibTeX
+@misc{marafioti2025smolvlmredefiningsmallefficient,
+      title={SmolVLM: Redefining small and efficient multimodal models}, 
+      author={Andrés Marafioti and Orr Zohar and Miquel Farré and Merve Noyan and Elie Bakouch and Pedro Cuenca and Cyril Zakka and Loubna Ben Allal and Anton Lozhkov and Nouamane Tazi and Vaibhav Srivastav and Joshua Lochner and Hugo Larcher and Mathieu Morlon and Lewis Tunstall and Leandro von Werra and Thomas Wolf},
+      year={2025},
+      eprint={2504.05299},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI},
+      url={https://arxiv.org/abs/2504.05299}, 
+}
+```
+
 ## License
 
 This project is licensed under the [MIT License](LICENSE). 

@@ -3,7 +3,7 @@
 from transformers import LlamaModel, LlamaConfig, AutoTokenizer, AutoModelForCausalLM, AutoConfig
 from transformers import GPTNeoXForCausalLM
 from transformers import LlavaNextProcessor, LlavaNextForConditionalGeneration
-from transformers import AutoModel, AutoTokenizer
+from transformers import AutoModel, AutoTokenizer, AutoModelForImageTextToText
 
 from typing import Any, Dict, Optional, Tuple
 from torch.nn import functional as F
@@ -91,6 +91,14 @@ class LLM(nn.Module):
                 self.model.embed_tokens = self.model.base_model.embed_tokens
             except:
                 self.model.embed_tokens = self.model.model.tok_embeddings
+        elif 'smolvlm' in self.variant.lower():
+            self.model = AutoModelForImageTextToText.from_pretrained(self.variant, trust_remote_code=True)
+            self.model = self.model.model.text_model
+            try:
+                self.model.embed_tokens = self.model.model.text_model.embed_tokens
+            except:
+                self.model.embed_tokens = self.model.model.tok_embeddings
+            self.tokenizer = AutoTokenizer.from_pretrained(self.variant, trust_remote_code=True)
         else:
             raise ValueError(f"Carefull: Variant {self.variant} not tested.")
             config_overrides = CONFIGS[self.variant].copy()

@@ -9,13 +9,13 @@ model:
   predict_route_as_wps: True
   speed_wps_mode: 2d
   language_model:
-    variant: 'OpenGVLab/InternVL2-1B'
+    variant: 'HuggingFaceTB/SmolVLM-Base' # 'OpenGVLab/InternVL2-1B'
     lora: True
     lora_alpha: 64
     lora_r: 32
     lora_dropout: 0.1
   vision_model:
-    variant: 'OpenGVLab/InternVL2-1B'
+    variant: 'HuggingFaceTB/SmolVLM-Base' # 'OpenGVLab/InternVL2-1B'
 
 data_module:
   batch_size: 1
