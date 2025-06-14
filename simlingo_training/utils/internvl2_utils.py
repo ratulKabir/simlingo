@@ -21,9 +21,16 @@ IMAGENET_STD = (0.229, 0.224, 0.225)
 def get_num_image_tokens_per_patch(encoder_variant: str) -> int:
     # we want to know how many image tokens we use so that we can adjust the batch padding
     tmp_config = AutoConfig.from_pretrained(encoder_variant, trust_remote_code=True)
-    image_size = tmp_config.force_image_size or tmp_config.vision_config.image_size
-    patch_size = tmp_config.vision_config.patch_size
-    num_image_tokens = int((image_size // patch_size) ** 2 * (tmp_config.downsample_ratio ** 2))
+    if 'internvl' in encoder_variant.lower():
+        image_size = tmp_config.force_image_size or tmp_config.vision_config.image_size
+        patch_size = tmp_config.vision_config.patch_size
+        num_image_tokens = int((image_size // patch_size) ** 2 * (tmp_config.downsample_ratio ** 2))
+    elif 'smolvlm' in encoder_variant.lower():
+        image_size = tmp_config.vision_config.image_size
+        patch_size = tmp_config.vision_config.patch_size
+        downsample_ratio = 1 / tmp_config.scale_factor
+        num_image_tokens = int((image_size // patch_size) ** 2 * (downsample_ratio ** 2))
+
     return num_image_tokens
 
 def get_assistant_loss_mask(user_starts, assistant_starts, prompt_tokenized_ids):

@@ -135,6 +135,8 @@ class DrivingModel(pl.LightningModule):
                     eos = self.tokenizer.added_tokens_encoder['<|end|>']
                 elif self.language_model.variant == 'OpenGVLab/InternVL2-2B':
                     eos = self.tokenizer.added_tokens_encoder['<|im_end|>']
+                elif self.language_model.variant == 'HuggingFaceTB/SmolVLM-Base':
+                    eos = self.tokenizer.added_tokens_encoder["<|endoftext|>"]
                 else:
                     eos = self.tokenizer.eos_token_id
 

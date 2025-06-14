@@ -6,7 +6,13 @@ from transformers import AutoModelForImageTextToText
 class LingoSmolVLMModel(nn.Module):
     def __init__(self, variant, *args, **kwargs):
         super().__init__()
-        self.model = AutoModelForImageTextToText.from_pretrained(variant, trust_remote_code=True)
+        # self.model = AutoModelForImageTextToText.from_pretrained(variant, trust_remote_code=True)
+        try:
+            local_path = "/home/ratul/Workstation/ratul/huggingface_models/models--HuggingFaceTB--SmolVLM-Base"
+            self.model = AutoModelForImageTextToText.from_pretrained(local_path, trust_remote_code=True, local_files_only=True)
+        except Exception as e:
+            print(f"Local load failed: {e}. Downloading from remote...")
+            self.model = AutoModelForImageTextToText.from_pretrained(variant, trust_remote_code=True)
         try:
             self.num_embeddings = self.model.model.text_model.embed_tokens.num_embeddings
         except:

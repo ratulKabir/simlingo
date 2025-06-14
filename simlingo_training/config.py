@@ -6,7 +6,7 @@ from hydra.core.config_store import ConfigStore
 
 @dataclass
 class VLMEncoderConfig:
-    variant: str = 'OpenGVLab/InternVL2-1B'
+    variant: str = 'HuggingFaceTB/SmolVLM-Base' # 'OpenGVLab/InternVL2-1B'
     embed_dim: int = 512
     freeze: bool = False
 
@@ -15,7 +15,7 @@ class VLMEncoderConfig:
 
 @dataclass
 class LanguageModelConfig:
-    variant: str = 'OpenGVLab/InternVL2-1B'
+    variant: str = 'HuggingFaceTB/SmolVLM-Base' # 'OpenGVLab/InternVL2-1B'
     lora: bool = True
     lora_alpha: int = 64
     lora_r: int = 32

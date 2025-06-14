@@ -92,8 +92,12 @@ class LLM(nn.Module):
             except:
                 self.model.embed_tokens = self.model.model.tok_embeddings
         elif 'smolvlm' in self.variant.lower():
-            self.model = AutoModelForImageTextToText.from_pretrained(self.variant, trust_remote_code=True)
-            self.model = self.model.model.text_model
+            try:
+                local_path = "/home/ratul/Workstation/ratul/huggingface_models/models--HuggingFaceTB--SmolVLM-Base"
+                self.model = AutoModelForImageTextToText.from_pretrained(local_path, trust_remote_code=True, local_files_only=True)
+            except Exception as e:
+                print(f"Local load failed: {e}. Downloading from remote...")
+                self.model = AutoModelForImageTextToText.from_pretrained(self.variant, trust_remote_code=True)
             try:
                 self.model.embed_tokens = self.model.model.text_model.embed_tokens
             except:
